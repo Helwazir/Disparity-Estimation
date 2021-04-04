@@ -1,5 +1,7 @@
 # M3OEP-MPL-helwazir
 By Hamzah Elwazir
+
+Video link: https://web.microsoftstream.com/video/9195e60e-4d9d-4496-85fc-3249d235c555
 # SSD based disparity estimation in C++
 ### An intro to disparity
 How do you derive 3D information from a 2D image? This is a complicated problem with many solutions. On such solution 

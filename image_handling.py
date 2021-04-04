@@ -24,8 +24,6 @@ else:
 view_left_img = cv2.imread('input_images/' + img_set + 'view_left.png', 0)
 view_right_img = cv2.imread('input_images/' + img_set + 'view_right.png', 0)
 
-# view_left_img = cv2.imread('input_images/mannequin_view_left.png', 0)
-# view_right_img = cv2.imread('input_images/mannequin_view_right.png', 0)
 # And save them as csv files
 np.savetxt('view_left', view_left_img, delimiter=',')
 np.savetxt('view_right', view_right_img, delimiter=',')
