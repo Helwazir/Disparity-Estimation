@@ -52,27 +52,27 @@ vector<vector<double>> parseCSV(string filename) {
     string line, val;
     vector<vector<double>> img_vec;
 
-    ifstream myFile(filename);
-    if(!myFile.is_open()) throw std::runtime_error("Could not open file");
+    ifstream inFile(filename);
+    if(!inFile.is_open()) throw std::runtime_error("Could not open file");
 
-    while (myFile.peek() != EOF) {
+    while (inFile.peek() != EOF) {
         vector<double> row;
-        getline(myFile, line, '\n');
+        getline(inFile, line, '\n');
         stringstream s(line);
         while (getline(s, val, ',')) {
             row.push_back(stof(val));
         }
         img_vec.push_back(row);
     }
-    myFile.close();
+    inFile.close();
 
     return img_vec;
 }
 
 
 void estimateDisparity(vector<vector<double>> left_img, vector<vector<double>> right_img, int window_size) {
-    ofstream myFile;
-    myFile.open("disp_output.csv");
+    ofstream outFile;
+    outFile.open("disp_output.csv");
 
     vector<vector<double>> disp_map;
     int i, j, k, x, y;
@@ -116,9 +116,10 @@ void estimateDisparity(vector<vector<double>> left_img, vector<vector<double>> r
 
             // Calculate the disparity between the same object in the two images and write it to disp_output.csv
             int disparity = abs(j - index);
-            myFile << disparity << ',';
+            outFile << disparity << ',';
         }
-        myFile << '\n';
+        outFile << '\n';
         cout << "Row " << i << " done" << endl;
     }
+    outFile.close();
 }
