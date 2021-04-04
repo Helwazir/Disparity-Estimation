@@ -39,8 +39,8 @@ int main(int argc, char* argv[]) {
     }
 
     // Read pixel intensities from csv files into vectors
-    vector<vector<double>> view1_vec = parseCSV("/Users/haz/Desktop/CS 120/Module 3/Open Ended Projects/M3OEP-MPL-helwazir/view1_csv");
-    vector<vector<double>> view5_vec = parseCSV("/Users/haz/Desktop/CS 120/Module 3/Open Ended Projects/M3OEP-MPL-helwazir/view5_csv");
+    vector<vector<double>> view1_vec = parseCSV("/Users/haz/Desktop/CS 120/Module 3/Open Ended Projects/M3OEP-MPL-helwazir/view_left");
+    vector<vector<double>> view5_vec = parseCSV("/Users/haz/Desktop/CS 120/Module 3/Open Ended Projects/M3OEP-MPL-helwazir/view_right");
 
     // Estimate disparity between images
     estimateDisparity(view1_vec, view5_vec, window_size);
