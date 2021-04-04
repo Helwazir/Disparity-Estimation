@@ -23,14 +23,14 @@ int main() {
     cout << "Size: " << view1_vec.size() << " x " << view1_vec[0].size() << endl;
     cout << "Size: " << view5_vec.size() << " x " << view5_vec[0].size() << endl;
 
-
     estimateDisparity(view1_vec, view5_vec);
 
     return 0;
 }
 
 vector<vector<double>> parseCSV(string filename) {
-    ifstream myFile("/Users/haz/Desktop/CS 120/Misc/MLP_maybe/" + filename);
+//    ifstream myFile("/Users/haz/Desktop/CS 120/Misc/MLP_maybe/" + filename);
+    ifstream myFile("./" + filename);
     if(!myFile.is_open()) throw std::runtime_error("Could not open file");
 
     string line, val;
@@ -53,9 +53,9 @@ vector<vector<double>> parseCSV(string filename) {
 }
 
 
-void estimateDisparity(vector<vector<double>> left_img, vector<vector<double>> right_img, int window_size) {
+void estimateDisparity(vector<vector<double>> left_img, vector<vector<double>> right_img) {
     ofstream myFile;
-    myFile.open("/Users/haz/Desktop/CS 120/Misc/MLP_maybe/example.csv");
+    myFile.open("disp_output.csv");
 
     vector<vector<double>> disp_map;
     long i, j, k;
